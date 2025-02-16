@@ -1,43 +1,21 @@
-const getUserNames = users => {
-	return users.map(user => user.name);
-};
+// Select the categories list
+const categoriesList = document.querySelector('#categories');
 
-console.log(
-	getUserNames([
-		{
-			name: "Moore Hensley",
-			email: "moorehensley@indexia.com",
-			balance: 2811,
-		},
-		{
-			name: "Sharlene Bush",
-			email: "sharlenebush@tubesys.com",
-			balance: 3821,
-		},
-		{
-			name: "Ross Vazquez",
-			email: "rossvazquez@xinware.com",
-			balance: 3793,
-		},
-		{
-			name: "Elma Head",
-			email: "elmahead@omatom.com",
-			balance: 2278,
-		},
-		{
-			name: "Carey Barr",
-			email: "careybarr@nurali.com",
-			balance: 3951,
-		},
-		{
-			name: "Blackburn Dotson",
-			email: "blackburndotson@furnigeer.com",
-			balance: 1498,
-		},
-		{
-			name: "Sheree Anthony",
-			email: "shereeanthony@kog.com",
-			balance: 2764,
-		},
-	]),
-); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+// Get all category items
+const categoryItems = categoriesList.querySelectorAll('.item');
+
+// Log the number of categories
+console.log(`Number of categories: ${categoryItems.length}`);
+
+// Iterate over each category item
+categoryItems.forEach(item => {
+  // Get the category title
+  const categoryTitle = item.querySelector('h2').textContent;
+
+  // Get the number of elements in the category
+  const categoryElementsCount = item.querySelectorAll('ul li').length;
+
+  // Log the category title and number of elements
+  console.log(`Category: ${categoryTitle}`);
+  console.log(`Elements: ${categoryElementsCount}`);
+});
